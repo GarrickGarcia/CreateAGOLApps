@@ -1,10 +1,9 @@
-from AGOLLogin import get_gis_connection
+# Purpose: Create a view layer from a hosted feature layer, enable export, and disable attachment visibility if required
+
 from arcgis.features import FeatureLayerCollection
 import datetime
 
-def create_view(item_id, include_attachments):
-    gis = get_gis_connection()
-
+def create_view(gis, item_id, include_attachments):
     # Access the hosted feature layer by its item ID
     fl = gis.content.get(item_id)
     flc = FeatureLayerCollection.fromitem(fl)
@@ -33,6 +32,9 @@ def create_view(item_id, include_attachments):
     return view
 
 if __name__ == "__main__":
+    from AGOLLogin import get_gis_connection
+    gis = get_gis_connection()
+
     item_id = "3af9ea97c229469aa52156e20c8f1460"
     include_attachments = False
     view = create_view(item_id, include_attachments)

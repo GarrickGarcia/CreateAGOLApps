@@ -9,3 +9,7 @@ def get_gis_connection():
     gis = GIS("https://www.arcgis.com", username, password)
     
     return gis
+
+if __name__ == "__main__":
+    gis = get_gis_connection()
+    print("Connected to: " + gis.properties.portalHostname)
