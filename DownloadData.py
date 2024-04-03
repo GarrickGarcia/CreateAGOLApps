@@ -2,8 +2,12 @@ from arcgis.gis import GIS
 import arcpy
 import os
 
+# ask user to input their AGOL username and password
+username = input("Enter your ArcGIS Online username: ")
+password = input("Enter your ArcGIS Online password: ")
+
 # Establish a GIS connection
-gis = GIS("https://www.arcgis.com", "gogarcia", "Abonmarche95!")  
+gis = GIS("https://www.arcgis.com", username, password)
 
 # Access the hosted feature layer by its item ID
 item_id = "3af9ea97c229469aa52156e20c8f1460"
