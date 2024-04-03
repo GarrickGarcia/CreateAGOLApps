@@ -13,9 +13,10 @@ def create_view(item_id, include_attachments):
     now = datetime.datetime.now()
     view_name = "TempExportView_" + now.strftime("%Y%m%d_%H%M%S")
     view = flc.manager.create_view(name=view_name)
+    view_flc = FeatureLayerCollection.fromitem(view)
 
     # enable data export
-    view.manager.update_definition({'capabilities': 'Query, Extract'})
+    view_flc.manager.update_definition({'capabilities': 'Query, Extract'})
 
     # Check if the variable is set to False
     if not include_attachments:
@@ -30,3 +31,8 @@ def create_view(item_id, include_attachments):
                 tbl.manager.update_definition({'hasAttachments': False})
 
     return view
+
+if __name__ == "__main__":
+    item_id = "3af9ea97c229469aa52156e20c8f1460"
+    include_attachments = False
+    view = create_view(item_id, include_attachments)
