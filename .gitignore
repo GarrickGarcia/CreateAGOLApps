@@ -2,3 +2,4 @@
 *.yaml
 *.csv
 Data/
+__pycache__/
