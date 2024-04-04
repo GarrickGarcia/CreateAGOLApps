@@ -38,6 +38,6 @@ def GetLayer(item_id, include_attachments, path):
 
 if __name__ == "__main__":
     item_id = "3af9ea97c229469aa52156e20c8f1460"
-    include_attachments = True
+    include_attachments = False
     path = r"C:\Users\ggarcia\OneDrive - Abonmarche\Documents\GitHub\CreateAGOLApps\Data"
     GetLayer(item_id, include_attachments, path)
