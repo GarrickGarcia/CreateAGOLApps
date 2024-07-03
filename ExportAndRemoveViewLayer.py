@@ -37,7 +37,7 @@ def GetLayer(item_id, include_attachments, path):
     return os.path.join(path, new_file_name)
 
 if __name__ == "__main__":
-    item_id = "3af9ea97c229469aa52156e20c8f1460"
+    item_id = "558f1a29d3d648bd9a228b09d96d5b66"
     include_attachments = False
-    path = r"C:\Users\ggarcia\OneDrive - Abonmarche\Documents\GitHub\CreateAGOLApps\Data"
+    path = r"C:\Users\ggarcia\OneDrive - Abonmarche\GIS Projects\2023\23-0789 Decatur DWAM\Reference"
     GetLayer(item_id, include_attachments, path)
